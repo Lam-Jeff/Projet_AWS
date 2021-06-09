@@ -1,0 +1,255 @@
+https://ourcodeworld.com/articles/read/261/how-to-create-an-http-server-with-express-in-node-js
+https://modernweb.com/building-multiplayer-games-with-node-js-and-socket-io/
+
+- faire un formulaire avec nodejs
+https://medium.com/swlh/read-html-form-data-using-get-and-post-method-in-node-js-8d2c7880adbf
+
+- convertor from HTML to JS syntax
+https://www.accessify.com/tools-and-wizards/developer-tools/html-javascript-convertor/
+
+- Choisir son moteur de stockage
+https://www.techrepublic.com/article/a-fast-and-furious-guide-to-mysql-database-engines/
+
+- pour restreindre le choix des classes dans les tables
+ENUM mais si on doit ajouter des classes, la mise a jour peut etre contraignante
+-> on peut faire ça à la place
+https://stackoverflow.com/questions/6367063/how-to-restrict-a-column-value-in-sqlite-mysql
+
+Ressources utilisées:
+- Glitch,vs code pour coder
+- Tiled pour les dessins de map
+- Express pour gérer la partie serveur (au choix, peut etre modif plus tard)
+- Mysql Workbench pour la partie base de données
+- Socket.io pour la communication serveur/client
+- Sequelize pour coder la gestion des BDD
+
+
+-Assets pour les map
+https://kenney.nl/assets?q=2d
+
+
+//////////////////////////
+- yup pour créer des schéma de validations
+-DOMPurify
+https://linguinecode.com/post/validate-sanitize-user-input-javascript
+- un herbergeur d'images (amazon cloud par exemple)
+
+
+Pourquoi un serveur et un client ?
+Server
+The server should be in charge of making sure that moves are legal,
+calculating points, and anything else related to the rules and running of the game. 
+This is where the logic of the game is or where the game is played.
+
+Client
+This is ONLY used for interacting with the server. 
+There should exists a protocol between the Server and the Client. 
+The client will only send requests to the server, 
+wait for a response and update the UI appropriately. 
+No game logic should be implemented here.
+
+-KeyCode for moves 
+http://javascriptkeycode.com/
+
+-Dossier qui parle d'une optimisation pour gérer les collisions 
+https://gamedevelopment.tutsplus.com/tutorials/quick-tip-use-quadtrees-to-detect-likely-collisions-in-2d-space--gamedev-374
+
+-chat
+https://www.skysilk.com/blog/2018/create-real-time-chat-app-nodejs/
+
+-page d'inscription basique en javascript
+https://medium.com/swlh/how-to-create-your-first-login-page-with-html-css-and-javascript-602dd71144f1
+
+-prévention injection
+https://owasp.org/www-community/xss-filter-evasion-cheatsheet
+https://stackoverflow.com/questions/44488156/how-to-sanitize-js-and-html-in-inputs
+//////////////////////////////////////
+
+
+A faire :
+
+Chat:
+- option pour ne pas voir le chat (le désactiver)
+
+html :
+- page historique
+- footer a remplir
+- lié le site a une bdd 
+- check des documents sur internet pour voir comment gérer la sécu du site
+
+jeu :
+- ajouter des compétences avec leur icones
+- 4 map a modéliser encore sur Tiled
+- le jeu n'a qu'une classe de perso pour le moment
+- gérer les collisions 
+- objets
+- objectifs
+- tableau de score
+
+////////////////////////////////////
+Semaine 2
+nouvelles ressources :
+
+- Firebase tuto pour créer un systeme de connexion
+https://www.youtube.com/watch?v=-OKrloDzGpU&t=328s
+https://firebase.google.com/
+
+- firebase 
+faire une page de connexion avec mail et config prédéfinie cote client
+https://firebase.google.com/docs/auth/web/firebaseui
+
+- aide pour afficher des valeurs dynamiquement dans un tableau HTML (non utilisé pour le moment)
+https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces
+
+- sprites personnages
+https://craftpix.net/freebies/filter/sprites/page/2/
+
+fait :
+- systeme de connexion avec Firebase Auth (cote client)
+- ajout de kill et death dans la barre de score
+- le pseudo du joueur apparait maintenant, s'il n'est pas inscrit -> anonymous
+- page de profil : utilisation de https://bootsnipp.com/snippets/nPvnk et modifications apportées pour etre adpater a notre type de site
+    -> le code ci-dessus utilise Jquery DCN :
+    - https://jquery.com/
+    - https://www.yogihosting.com/jquery-cdn/ qu'est ce que jquery CDN
+    -https://www.yogihosting.com/what-is-cdn-content-delivery-network/ qu'est ce qu'un CDN
+- le personnage et les projectiles ne peuvent plus sortir de la map
+- premiers ennemis, apparition aléatoire sur la carte selon un intervalle. L'ennemi se déplace vers le joueur le plus proche. Limite de 3
+- initialisation du admin SDK côté serveur pour gérer les mise a jour des utilisateurs et bdd (non utilisé pour le moment)
+  - https://firebase.google.com/docs/admin/setup
+- 1 map modélisée via Tiled (disponible dans les dossiers mais non ajouté puisque l'option choix de map n'est pas encore présent)
+- 1ere version de validation d'input pour le chat en utilisant Yup
+https://www.npmjs.com/package/yup#mixedvalidatevalue-any-options-object-promiseany-validationerror
+http://www.regular-expressions.info/lookaround.html pour le Regex
+  -> une amélioration possible serait de créer une liste des balises plutot que de bannir toutes les chaines de la forme *<*>*
+- 3 canvas au lieu d'un, les 2 autres serviront pour l'hud 
+  -> on pourrait les superposer mais il faut alors supprimer header et footer
+- 1ere Page de menu de selection, la page est lié au serveur mais pas au jeu (on peut la tester et s'assurait que les info sont envoyés aux serveur)
+
+/////////////////////////////////////////////////////////////////////
+semaine 3:
+-ajax
+https://www.w3schools.com/asp/asp_ajax_intro.asp
+
+Ressources :
+- A star algorithm  -> est un algo pour trouver le plus court chemin, similaire a Dijkstra pour l'IA
+ https://github.com/bgrins/javascript-astar
+ 
+- site pour custom les sprites  (site un peu lent)
+https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=skeleton&brain_blood=1&ribs_blood=1&arm_blood=1&sex=male&mouth_blood=0&weapon=scythe
+
+- animer un perso avec un spritesheet
+ https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3
+ 
+- animate a spritesheet on html with css
+https://blog.logrocket.com/making-css-animations-using-a-sprite-sheet/
+
+- faire apapraitre et disparaitre du texte html un nombre de fois prédéfinis
+https://stackoverflow.com/questions/35556876/javascript-repeat-a-function-x-amount-of-times
+https://www.computerhope.com/issues/ch001651.htm#javascript
+
+- import and exports js file
+https://javascript.info/import-export
+
+- cropped images
+https://ezgif.com/
+
+- auto resize background image in a div 
+https://developer.mozilla.org/en-US/docs/Web/CSS/background-size
+
+- some attacks/icons sprite sheet
+https://opengameart.org/content/extended-lpc-magic-pack
+
+- systeme de room via socketIO
+https://socket.io/docs/v3/rooms/index.html
+
+platforme de conception graphique: pour tout les logos et images pour notre site 
+https://www.canva.com/
+
+FAIT :
+- L'utlisateur non inscrit ou non connecté ne peut plus accéder aux pages de profil et historique via l'url
+- premiere animation du personnage quand il se déplace
+- la page menu est ajouté au site, maintenant il faut choisir ses options avant de passer au jeu. Pour le moment il y a 2 maps, 4 classes et 1 mode
+- des fichiers comme event, map ont été crée (24/04) pour plus de clarté (tous les fichiers crées apres cette date ne seront pas ajoutés dans les ressources)
+- premiere version de collision :
+1.on prend la map au format json pour avoir une matrice de la map
+2.on vérifie naivement si le mouvement est valide
+  -> l'ennemi a une IA puante et des qu'il touche un mur il s'arrete donc pas de collision pour lui pour le moment. 
+    -> 2 solutions: on passe a une représentation diff des collisions mais ça demande de refaire toute la partie pour le joueur
+    ->ou on change le comportement de l'AI : au lieu de suivre le joueur, il aura un périmètre d'aggression + une ligne de vue -> si joueur dedans, il le suit + attaque sinon continue de se ballader aléatoirement
+- fenetre popup avec descriptif dans le menu
+- questionnement : retour en arriere par rapport a la semaine 2 : faut il utiliser 3 canvas (ou plus) ? un canvas + DOM encore mieux ?
+- ajout d'un bouton pour se mettre pret
+- le pseudo apparait maintenant lorsque qu'on envoie un message dans le chat
+- les invités ont maintenant un nom de la forme "Guest_number" ou number est généré aléatoirement selon la date. 
+  -> aucune garantie totale que l'id est unique
+- ajout de message privé dans le chat
+- ajustement du spawn des ennmies, ils ne peuvent plus apparaitre dans un obstacles
+- ajout d'un bouton surrender
+- les 4 skins pour les classes sont faites et ajoutés
+- ajout d'une barre de skills
+- ajout de l'attaque au corps a corps avec animation (il manque une image de transition donc ça clip à la fin de l'anime)
+- systeme de lobby 
+- ajout d'une fonction pour démarrer une game sinon on attend 
+
+fait mais non utilisé pour le moment ou encore en phase de test:
+- fonction d'annoncements
+- écran de fin de game 
+- ajout d'un timer dans la partie (apparait mais n'a aucune impact pour le moment)
+- en fin cas de surrender, le score est ajouté a la BDD
+
+////////////////////////////////////////////////////////////////////
+semaine 4 :
+Ressources :
+- A star algorithm  -> est un algo pour trouver le plus court chemin, similaire a Dijkstra pour l'IA
+ https://github.com/bgrins/javascript-astar
+-requestAnimationFrame
+https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+
+- color picker
+https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=fr
+
+- responsive Grid
+https://blogs.infinitesquare.com/posts/web/creer-une-mise-en-page-avec-css-grid-layout
+
+- responsive text
+https://www.w3schools.com/howto/howto_css_responsive_text.asp
+
+- click event
+https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+
+- opacity et set propriété CSS avec jquery
+https://www.w3schools.com/css/css_image_transparency.asp
+https://api.jquery.com/css/
+
+-read a json file
+https://stackabuse.com/reading-and-writing-json-files-with-node-js/
+
+
+FAIT :
+- l'écran de fin affiche maintenant l'issu de la partie
+- le serveur nettoie correctement les données liée à une partie si le joueur quitte en fermant la page 
+- la page de lobby n'affiche plus les parties deja commencés
+- alerte dans le lobby lorsque qu'un joueur rejoint la partie
+- l'attaque au corps a corps peut maintenant toucher les alliés dans le mode ffa 
+- le mode ffa est ajouté mais la fin de jeu demande d'attaquer une fois de plus que nécessaire pour un sorcier (check le projectile car il faut tirer pour mettre a jour les frags)
+- la hitbox de l'attaque du cac est revue
+- ajout d'une barre de stamina
+- le pathfinding pour les ennemies a été ajouté. marche mais hitbox pas très clean. (la hitbox de l'ennemi est au centre donc le bord de l'image peut "rentrer" dans l'obstacle)
+- ajout d'objets : soin ou stamina regen ou ult boost en passant dessus.
+- pour dessiner le jeu (fonction mainGame) : passage d'un setInterval à requestAnimationFrame
+  -> plus optimisé car rAF attend que la page soit prête à dessiner et adapte le temps de rafraichissement selon le navigateur (par défaut 60 fps)
+  + rAF se met en pause lorsque l'utilisateur n'est plus sur la page.
+- l'attaque au cac ne clip plus a la fin de l'anime
+- le joueur peut maintenant choisir son personnage quand il rejoint le lobby
+- bar d'ultime ajoutée
+- l'utilisateur ne peut plus rejoindre / créer une salle s'il manque une option
+- l'écran du jeu est responsive (pas parfait)
+- animation pour toutes les attaques de bases + tous les skills sont implentés 
+- refonte de la hitbox des projectiles, l'attaque distance touche mieux
+- Maps ajoutées
+- spawn random sur 4 places
+- l'ennemi attaque
+- mode zombie ajouté
+- ajustement du chat : texte responsive et chat transparent quand il n'est pas utilisé pour éviter de gêner le joueur
+- les classes sont init avec un fichier json
