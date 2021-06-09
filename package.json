@@ -1,0 +1,45 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "aws-app",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "array-flatten": "^3.0.0",
+    "body-parser": "^1.19.0",
+    "content-disposition": "^0.5.3",
+    "dompurify": "^2.2.8",
+    "express": "^4.17.1",
+    "finalhandler": "^1.1.2",
+    "firebase": "^8.6.2",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1",
+    "firebase-tools": "^9.11.0",
+    "merge-descriptors": "^1.0.1",
+    "methods": "^1.1.2",
+    "path-to-regexp": "^6.2.0",
+    "proxy-addr": "^2.0.6",
+    "send": "^0.17.1",
+    "socket.io": "^4.1.2",
+    "utils-merge": "^1.0.1",
+    "yup": "^0.32.9",
+    "javascript-astar": "^0.4.1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/aws-game-v2"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

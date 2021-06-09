@@ -1,0 +1,270 @@
+/** https://codepen.io/francescostella/pen/oxwYzx */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0px;
+  padding:0px;
+
+  background-color: #D86A17;
+  color: #ecf0f1;
+  font-family: sans-serif;
+  line-height: 1.4;
+  overflow: hidden
+}
+
+.map_selection,
+.class_selection,
+.mode_selection,
+.validation,
+.lobbies
+{
+  text-align: center;
+}
+
+
+button {
+  display: inline-block;
+  box-shadow: 1px 1px grey;
+  border-radius: 3px;
+  background-color: #A9A9A9;
+  padding: 5px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  width: 100%;
+}
+
+/** https://stackoverflow.com/questions/49243460/how-to-check-if-a-input-type-button-is-checked */
+
+/* Hide the checkboxes */
+input[type="radio"] {
+  display: none;
+}
+/* Default styling for labels to make them look like buttons */
+input[type="radio"] + label {
+  display: inline-block;
+  box-shadow: 1px 1px grey;
+  border-radius: 3px;
+  background-color: #A9A9A9;
+  padding: 5px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+/* Styling for labels when corresponding checkbox is checked */
+input[type="radio"]:checked + label {
+  box-shadow: -1px -1px grey;
+  background-color: #808080;
+}
+
+p{
+  text-align: center;
+}
+
+/* popup window on mouseover */
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss_tooltip */
+.infotext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #6699CC;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+}
+
+label:hover + .infotext {
+  visibility: visible;
+}
+
+/* game */
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* chat */
+/** https://www.skysilk.com/blog/2018/create-real-time-chat-app-nodejs/ */
+.box {
+  position: absolute;
+  background: #3d2b1f;
+  width: 60%;
+  height: 60%;
+  border-radius: 6px;
+  margin: 5% auto auto auto;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+.chatBox {
+  position: relative;
+  background: #9f8170;
+  border-radius: 5px;
+  width: 90%;
+  height: 60%;
+  margin: 1% auto 1% auto; /* top right bottom left */
+  border: 1px solid;
+  border-color: #9f8170;
+  overflow-y: scroll;
+}
+
+.chatCell {
+  font-size: 0.8vw;
+  background: transparent;
+  width: 100%;
+  height: 15%;
+  margin: auto auto 5px auto;
+  color: black;
+}
+
+.btn {
+  background: #2ecc71;
+  height: 20px;
+  color: #3d2b1f;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #2CC06B;
+}
+
+/** skills bar */
+.skill-bar {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  width: 200px;
+  height: 50px;
+}
+
+#game_zone-ui-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 10%;
+}
+#announcement {
+  position: absolute;
+  top: 0;
+  font-size: 30px;
+  left: 30%;
+}
+
+.time {
+  position: absolute;
+  left: 35%;
+}
+
+.info-bars {
+  position: absolute;
+  right: 0;
+  height: 80px;
+  width: 120px;
+}
+
+/** hourglass */
+/* https://blog.logrocket.com/making-css-animations-using-a-sprite-sheet/ */
+#hourglass {
+  height: 42px;
+  width: 42px;
+  background: url("../tileset/images/hourglass");
+  position: absolute;
+  display: inline-block;
+  animation: sprite 5s steps(15) infinite;
+  transform: translate(-25%, -25%) scale(0.5);
+  right: 10%;
+}
+
+#timer {
+  position: absolute;
+  display: inline-block;
+  color: black;
+}
+@keyframes sprite {
+  to {
+    background-position: -630px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #hourglass {
+    transform: scale(1);
+  }
+}
+
+.skill1,
+.skill2,
+.skill3 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-size:100% auto;
+}
+
+#new,
+#quit {
+  display: none;
+}
+
+/** to make the elements overlap */
+/* https://cssgrid-generator.netlify.app/ */
+.canvas-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.game-container {
+  grid-area: 1 / 1 / 6 / 6;
+}
+.general-container {
+  grid-area: 1 / 1 / 2 / 2;
+  position: relative;
+}
+.info-player-container {
+  grid-area: 1 / 5 / 2 / 6;
+  position: relative;
+}
+.skill-container {
+  grid-area: 5 / 5 / 6 / 6;
+  position: relative;
+}
+.chat-container {
+  grid-area: 5 / 1 / 6 / 3;
+  position: relative;
+  opacity: 0.3;
+}
+.timer-container {
+  grid-area: 1 / 3 / 2 / 4;
+  position: relative;
+}
+.info-container {
+  grid-area: 2 / 3 / 3 / 4;
+  position: relative;
+}
+.button-container {
+  grid-area: 5 / 3 / 6 / 4;
+  position: relative;
+}

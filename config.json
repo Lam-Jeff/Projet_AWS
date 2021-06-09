@@ -1,0 +1,33 @@
+{
+  "sorcerer": {
+    "class": "sorcerer",
+    "maxLife": 150,
+    "speedMove": 3,
+    "maxStamina": 130,
+    "atk": 10
+  },
+
+  "tank": {
+    "class": "tank",
+    "maxLife": 250,
+    "speedMove": 4,
+    "maxStamina": 150,
+    "atk": 6
+  },
+
+  "warrior": {
+    "class": "warrior",
+    "maxLife": 200,
+    "speedMove": 4,
+    "maxStamina": 150,
+    "atk": 8
+  },
+
+  "archer": {
+    "class": "archer",
+    "maxLife": 150,
+    "speedMove": 3,
+    "maxStamina": 175,
+    "atk": 6
+  }
+}

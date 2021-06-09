@@ -1,0 +1,49 @@
+/* TABLE */
+
+#table {
+  margin: 40px 0px;
+  border: none;
+  background-color: #EEEEEE;
+}
+
+td {
+  padding: 15px;
+}
+
+
+/* HEADER TABLE */
+
+#table > thead {
+  border: none;
+}
+
+#table > thead > tr {
+  border: none;
+}
+
+#table > thead > tr > td {
+  background-color: rgba(216, 106, 23, 1);
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+
+
+/* BODY TABLE */
+
+#table > tbody {
+  border: none;
+}
+
+#table > tbody tr {
+  
+  background-color: white;
+}
+
+#table > tbody > tr > td {
+  
+  border: 2px solid rgba(216, 106, 23, 0.5);
+  
+}

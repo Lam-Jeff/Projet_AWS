@@ -1,0 +1,33 @@
+.tital {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  margin: auto;
+  background-color: rgba(216, 106, 23, 1) ;
+  /*border-bottom: 2px solid #1abc9c;*/
+  width: 50%;
+  padding: 10px
+}
+
+.col-sm-7 {
+  margin: 15px auto 25px auto;
+  width:50%;
+  
+}
+
+.rank-status {
+  font : 20px bold;
+}
+
+#mail_account {
+  color: rgba(216, 106, 23, 1);
+  text-decoration: none;
+}
+
+#mail_account:hover {
+  border-bottom: 1px solid rgba(216, 106, 23, 1);
+}
+
+hr {
+  color: rgba(216, 106, 23, 1);
+}
